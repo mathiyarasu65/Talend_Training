@@ -17,61 +17,155 @@
       <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/Oracle_0.1.item#_m91cVO2xEeiYg8GHx75lBg"/>
     </context>
     <results xmi:id="_suTmJ-2xEeiYg8GHx75lBg">
-      <resultMetadata xmi:id="_suTmKO2xEeiYg8GHx75lBg"/>
-      <indicators xsi:type="dataquality.indicators:RowCountIndicator" xmi:id="_uCz68O2xEeiYg8GHx75lBg">
+      <resultMetadata xmi:id="_suTmKO2xEeiYg8GHx75lBg" executionDate="2018-11-21T18:21:27.318+0100" executionDuration="1664" message="" executionNumber="1" lastRunOk="true" lastExecutionNumberOk="1"/>
+      <indicators xsi:type="dataquality.indicators:RowCountIndicator" xmi:id="_uCz68O2xEeiYg8GHx75lBg" count="3" computed="true">
         <parameters xmi:id="_uCz68e2xEeiYg8GHx75lBg"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../metadata/connections/Oracle_0.1.item#_m91cUO2xEeiYg8GHx75lBg"/>
         <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Row_Count_0.1.definition#_ccFOkBF2Ed2PKb6nEJEvhw"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_4Opc0e2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM &quot;TALEND_DEV&quot;.&quot;TALEND_DEMO&quot; " language="Oracle"/>
+        <builtInIndicatorDefinition xmi:id="_4M7lkO2xEeiYg8GHx75lBg" name="Row Count" label="Row Count">
+          <taggedValue xmi:id="_4M7lke2xEeiYg8GHx75lBg" tag="Description" value="counts the number of rows"/>
+          <taggedValue xmi:id="_4M7lku2xEeiYg8GHx75lBg" tag="Purpose" value="evaluates the number of records"/>
+          <sqlGenericExpression xmi:id="_4M7lk-2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%>" language="SQL"/>
+        </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_uCz68u2xEeiYg8GHx75lBg">
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_uCz68u2xEeiYg8GHx75lBg" count="3" computed="true">
         <parameters xmi:id="_uCz68-2xEeiYg8GHx75lBg"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../metadata/connections/Oracle_0.1.item#_m91cUO2xEeiYg8GHx75lBg"/>
         <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_4Opc0u2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM &quot;TALEND_DEV&quot;.&quot;TALEND_DEMO&quot; WHERE &quot;ID&quot; IS NULL " language="Oracle"/>
+        <builtInIndicatorDefinition xmi:id="_4NHy0O2xEeiYg8GHx75lBg" name="Null Count" label="Null Count">
+          <taggedValue xmi:id="_4NHy0e2xEeiYg8GHx75lBg" tag="Purpose" value="evaluate the number of missing data (null records)"/>
+          <taggedValue xmi:id="_4NHy0u2xEeiYg8GHx75lBg" tag="Description" value="counts the number of null rows"/>
+          <sqlGenericExpression xmi:id="_4NHy0-2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> WHERE &lt;%=__COLUMN_NAMES__%> IS NULL &lt;%=__AND_WHERE_CLAUSE__%>" language="SQL"/>
+        </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:DistinctCountIndicator" xmi:id="_uCz69O2xEeiYg8GHx75lBg">
+      <indicators xsi:type="dataquality.indicators:DistinctCountIndicator" xmi:id="_uCz69O2xEeiYg8GHx75lBg" count="3" computed="true" distinctValueCount="3">
         <parameters xmi:id="_uCz69e2xEeiYg8GHx75lBg"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../metadata/connections/Oracle_0.1.item#_m91cUO2xEeiYg8GHx75lBg"/>
         <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Distinct_Count_0.1.definition#_ccHq0BF2Ed2PKb6nEJEvhw"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_4Opc0-2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT DISTINCT &quot;ID&quot; FROM &quot;TALEND_DEV&quot;.&quot;TALEND_DEMO&quot; ) A" language="Oracle"/>
+        <builtInIndicatorDefinition xmi:id="_4NQ8wO2xEeiYg8GHx75lBg" name="Distinct Count" label="Distinct Count">
+          <taggedValue xmi:id="_4NQ8we2xEeiYg8GHx75lBg" tag="Description" value="counts the number of distinct rows (like a &quot;SELECT DISTINCT&quot; SQL statement)"/>
+          <taggedValue xmi:id="_4NQ8wu2xEeiYg8GHx75lBg" tag="Purpose" value="evaluates the number of distinct records"/>
+          <sqlGenericExpression xmi:id="_4NQ8w-2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT DISTINCT &lt;%=__COLUMN_NAMES__%> FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%>) A" language="SQL"/>
+        </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:UniqueCountIndicator" xmi:id="_uCz69u2xEeiYg8GHx75lBg">
+      <indicators xsi:type="dataquality.indicators:UniqueCountIndicator" xmi:id="_uCz69u2xEeiYg8GHx75lBg" count="3" computed="true" uniqueValueCount="3">
         <parameters xmi:id="_uCz69-2xEeiYg8GHx75lBg"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../metadata/connections/Oracle_0.1.item#_m91cUO2xEeiYg8GHx75lBg"/>
         <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Unique_Count_0.1.definition#_ccHq0RF2Ed2PKb6nEJEvhw"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_4Opc1O2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT &quot;ID&quot;, COUNT(*) FROM &quot;TALEND_DEV&quot;.&quot;TALEND_DEMO&quot;  GROUP BY &quot;ID&quot; HAVING COUNT(*) = 1) myquery" language="Oracle"/>
+        <builtInIndicatorDefinition xmi:id="_4NaGsO2xEeiYg8GHx75lBg" name="Unique Count" label="Unique Count">
+          <taggedValue xmi:id="_4NaGse2xEeiYg8GHx75lBg" tag="Description" value="counts the number of unique rows (i.e. distinct rows with only one instance: rows that are not duplicated)"/>
+          <taggedValue xmi:id="_4NaGsu2xEeiYg8GHx75lBg" tag="Purpose" value="evaluates the number of unique records"/>
+          <sqlGenericExpression xmi:id="_4NaGs-2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) = 1) AS myquery" language="SQL"/>
+          <sqlGenericExpression xmi:id="_4NaGtO2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) mycount FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING mycount = 1) AS myquery" language="MySQL"/>
+          <sqlGenericExpression xmi:id="_4NaGte2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) = 1) myquery" language="Oracle"/>
+          <sqlGenericExpression xmi:id="_4NaGtu2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) mycount FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING mycount = 1) AS myquery" language="Teradata"/>
+          <sqlGenericExpression xmi:id="_4NaGt-2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) mycount FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) = 1) AS myquery" language="Microsoft SQL Server"/>
+          <sqlGenericExpression xmi:id="_4NaGuO2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) mycount FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) = 1) AS myquery" language="Adaptive Server Enterprise | Sybase Adaptive Server IQ"/>
+          <sqlGenericExpression xmi:id="_4NaGue2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) = 1)  myquery" language="Hive" version=""/>
+        </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:DuplicateCountIndicator" xmi:id="_uCz6-O2xEeiYg8GHx75lBg">
+      <indicators xsi:type="dataquality.indicators:DuplicateCountIndicator" xmi:id="_uCz6-O2xEeiYg8GHx75lBg" count="3" computed="true" duplicateValueCount="0">
         <parameters xmi:id="_uCz6-e2xEeiYg8GHx75lBg"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../metadata/connections/Oracle_0.1.item#_m91cUO2xEeiYg8GHx75lBg"/>
         <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Duplicate_Count_0.1.definition#_ccHq0hF2Ed2PKb6nEJEvhw"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_4Opc1e2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT &quot;ID&quot;, COUNT(*) mycount FROM &quot;TALEND_DEV&quot;.&quot;TALEND_DEMO&quot;  m  GROUP BY &quot;ID&quot; HAVING COUNT(*) > 1) myquery" language="Oracle"/>
+        <builtInIndicatorDefinition xmi:id="_4Nj3sO2xEeiYg8GHx75lBg" name="Duplicate Count" label="Duplicate Count">
+          <taggedValue xmi:id="_4Nj3se2xEeiYg8GHx75lBg" tag="Description" value="counts the number of duplicate rows. This number and the number of unique data equals the number of distinct rows"/>
+          <taggedValue xmi:id="_4Nj3su2xEeiYg8GHx75lBg" tag="Purpose" value="evaluates the number of duplicated records"/>
+          <sqlGenericExpression xmi:id="_4Nj3s-2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%>  m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) > 1) AS myquery" language="SQL"/>
+          <sqlGenericExpression xmi:id="_4Nj3tO2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) mycount FROM &lt;%=__TABLE_NAME__%>  m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING mycount > 1) AS myquery" language="MySQL"/>
+          <sqlGenericExpression xmi:id="_4Nj3te2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) mycount FROM &lt;%=__TABLE_NAME__%>  m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) > 1) myquery" language="Oracle"/>
+          <sqlGenericExpression xmi:id="_4Nj3tu2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) mycount FROM &lt;%=__TABLE_NAME__%>  m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING mycount > 1) AS myquery" language="Teradata"/>
+          <sqlGenericExpression xmi:id="_4Nj3t-2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) mycount FROM &lt;%=__TABLE_NAME__%>  m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) > 1) myquery" language="Microsoft SQL Server"/>
+          <sqlGenericExpression xmi:id="_4Nj3uO2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) mycount FROM &lt;%=__TABLE_NAME__%>  m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) > 1) AS myquery" language="Adaptive Server Enterprise | Sybase Adaptive Server IQ"/>
+          <sqlGenericExpression xmi:id="_4Nj3ue2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%>  m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) > 1) myquery" language="Hive"/>
+        </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:RowCountIndicator" xmi:id="_uC2XMu2xEeiYg8GHx75lBg">
+      <indicators xsi:type="dataquality.indicators:RowCountIndicator" xmi:id="_uC2XMu2xEeiYg8GHx75lBg" count="3" computed="true">
         <parameters xmi:id="_uC2XM-2xEeiYg8GHx75lBg"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../metadata/connections/Oracle_0.1.item#_m91cVO2xEeiYg8GHx75lBg"/>
         <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Row_Count_0.1.definition#_ccFOkBF2Ed2PKb6nEJEvhw"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_4Opc0O2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM &quot;TALEND_DEV&quot;.&quot;TALEND_DEMO&quot; " language="Oracle"/>
+        <builtInIndicatorDefinition xmi:id="_4Nu20O2xEeiYg8GHx75lBg" name="Row Count" label="Row Count">
+          <taggedValue xmi:id="_4Nu20e2xEeiYg8GHx75lBg" tag="Description" value="counts the number of rows"/>
+          <taggedValue xmi:id="_4Nu20u2xEeiYg8GHx75lBg" tag="Purpose" value="evaluates the number of records"/>
+          <sqlGenericExpression xmi:id="_4Nu20-2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%>" language="SQL"/>
+        </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_uC2XNO2xEeiYg8GHx75lBg">
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_uC2XNO2xEeiYg8GHx75lBg" count="3" computed="true">
         <parameters xmi:id="_uC2XNe2xEeiYg8GHx75lBg"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../metadata/connections/Oracle_0.1.item#_m91cVO2xEeiYg8GHx75lBg"/>
         <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_4Opc1u2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM &quot;TALEND_DEV&quot;.&quot;TALEND_DEMO&quot; WHERE &quot;NAME&quot; IS NULL " language="Oracle"/>
+        <builtInIndicatorDefinition xmi:id="_4N518O2xEeiYg8GHx75lBg" name="Null Count" label="Null Count">
+          <taggedValue xmi:id="_4N518e2xEeiYg8GHx75lBg" tag="Purpose" value="evaluate the number of missing data (null records)"/>
+          <taggedValue xmi:id="_4N518u2xEeiYg8GHx75lBg" tag="Description" value="counts the number of null rows"/>
+          <sqlGenericExpression xmi:id="_4N518-2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> WHERE &lt;%=__COLUMN_NAMES__%> IS NULL &lt;%=__AND_WHERE_CLAUSE__%>" language="SQL"/>
+        </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:DistinctCountIndicator" xmi:id="_uC2XNu2xEeiYg8GHx75lBg">
+      <indicators xsi:type="dataquality.indicators:DistinctCountIndicator" xmi:id="_uC2XNu2xEeiYg8GHx75lBg" count="3" computed="true" distinctValueCount="3">
         <parameters xmi:id="_uC2XN-2xEeiYg8GHx75lBg"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../metadata/connections/Oracle_0.1.item#_m91cVO2xEeiYg8GHx75lBg"/>
         <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Distinct_Count_0.1.definition#_ccHq0BF2Ed2PKb6nEJEvhw"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_4OqD4O2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT DISTINCT &quot;NAME&quot; FROM &quot;TALEND_DEV&quot;.&quot;TALEND_DEMO&quot; ) A" language="Oracle"/>
+        <builtInIndicatorDefinition xmi:id="_4OCY0O2xEeiYg8GHx75lBg" name="Distinct Count" label="Distinct Count">
+          <taggedValue xmi:id="_4OCY0e2xEeiYg8GHx75lBg" tag="Description" value="counts the number of distinct rows (like a &quot;SELECT DISTINCT&quot; SQL statement)"/>
+          <taggedValue xmi:id="_4OCY0u2xEeiYg8GHx75lBg" tag="Purpose" value="evaluates the number of distinct records"/>
+          <sqlGenericExpression xmi:id="_4OCY0-2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT DISTINCT &lt;%=__COLUMN_NAMES__%> FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%>) A" language="SQL"/>
+        </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:UniqueCountIndicator" xmi:id="_uC2XOO2xEeiYg8GHx75lBg">
+      <indicators xsi:type="dataquality.indicators:UniqueCountIndicator" xmi:id="_uC2XOO2xEeiYg8GHx75lBg" count="3" computed="true" uniqueValueCount="3">
         <parameters xmi:id="_uC2XOe2xEeiYg8GHx75lBg"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../metadata/connections/Oracle_0.1.item#_m91cVO2xEeiYg8GHx75lBg"/>
         <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Unique_Count_0.1.definition#_ccHq0RF2Ed2PKb6nEJEvhw"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_4OqD4e2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT &quot;NAME&quot;, COUNT(*) FROM &quot;TALEND_DEV&quot;.&quot;TALEND_DEMO&quot;  GROUP BY &quot;NAME&quot; HAVING COUNT(*) = 1) myquery" language="Oracle"/>
+        <builtInIndicatorDefinition xmi:id="_4OLiwO2xEeiYg8GHx75lBg" name="Unique Count" label="Unique Count">
+          <taggedValue xmi:id="_4OLiwe2xEeiYg8GHx75lBg" tag="Description" value="counts the number of unique rows (i.e. distinct rows with only one instance: rows that are not duplicated)"/>
+          <taggedValue xmi:id="_4OLiwu2xEeiYg8GHx75lBg" tag="Purpose" value="evaluates the number of unique records"/>
+          <sqlGenericExpression xmi:id="_4OLiw-2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) = 1) AS myquery" language="SQL"/>
+          <sqlGenericExpression xmi:id="_4OLixO2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) mycount FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING mycount = 1) AS myquery" language="MySQL"/>
+          <sqlGenericExpression xmi:id="_4OLixe2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) = 1) myquery" language="Oracle"/>
+          <sqlGenericExpression xmi:id="_4OLixu2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) mycount FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING mycount = 1) AS myquery" language="Teradata"/>
+          <sqlGenericExpression xmi:id="_4OLix-2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) mycount FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) = 1) AS myquery" language="Microsoft SQL Server"/>
+          <sqlGenericExpression xmi:id="_4OLiyO2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) mycount FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) = 1) AS myquery" language="Adaptive Server Enterprise | Sybase Adaptive Server IQ"/>
+          <sqlGenericExpression xmi:id="_4OLiye2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) = 1)  myquery" language="Hive" version=""/>
+        </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:DuplicateCountIndicator" xmi:id="_uC2XOu2xEeiYg8GHx75lBg">
+      <indicators xsi:type="dataquality.indicators:DuplicateCountIndicator" xmi:id="_uC2XOu2xEeiYg8GHx75lBg" count="3" computed="true" duplicateValueCount="0">
         <parameters xmi:id="_uC2XO-2xEeiYg8GHx75lBg"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../metadata/connections/Oracle_0.1.item#_m91cVO2xEeiYg8GHx75lBg"/>
         <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Duplicate_Count_0.1.definition#_ccHq0hF2Ed2PKb6nEJEvhw"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_4OqD4u2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT &quot;NAME&quot;, COUNT(*) mycount FROM &quot;TALEND_DEV&quot;.&quot;TALEND_DEMO&quot;  m  GROUP BY &quot;NAME&quot; HAVING COUNT(*) > 1) myquery" language="Oracle"/>
+        <builtInIndicatorDefinition xmi:id="_4OUFoO2xEeiYg8GHx75lBg" name="Duplicate Count" label="Duplicate Count">
+          <taggedValue xmi:id="_4OUFoe2xEeiYg8GHx75lBg" tag="Description" value="counts the number of duplicate rows. This number and the number of unique data equals the number of distinct rows"/>
+          <taggedValue xmi:id="_4OUFou2xEeiYg8GHx75lBg" tag="Purpose" value="evaluates the number of duplicated records"/>
+          <sqlGenericExpression xmi:id="_4OUFo-2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%>  m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) > 1) AS myquery" language="SQL"/>
+          <sqlGenericExpression xmi:id="_4OUFpO2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) mycount FROM &lt;%=__TABLE_NAME__%>  m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING mycount > 1) AS myquery" language="MySQL"/>
+          <sqlGenericExpression xmi:id="_4OUFpe2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) mycount FROM &lt;%=__TABLE_NAME__%>  m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) > 1) myquery" language="Oracle"/>
+          <sqlGenericExpression xmi:id="_4OUFpu2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) mycount FROM &lt;%=__TABLE_NAME__%>  m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING mycount > 1) AS myquery" language="Teradata"/>
+          <sqlGenericExpression xmi:id="_4OUFp-2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) mycount FROM &lt;%=__TABLE_NAME__%>  m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) > 1) myquery" language="Microsoft SQL Server"/>
+          <sqlGenericExpression xmi:id="_4OUFqO2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) mycount FROM &lt;%=__TABLE_NAME__%>  m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) > 1) AS myquery" language="Adaptive Server Enterprise | Sybase Adaptive Server IQ"/>
+          <sqlGenericExpression xmi:id="_4OUFqe2xEeiYg8GHx75lBg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%>  m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) > 1) myquery" language="Hive"/>
+        </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_uC2XPO2xEeiYg8GHx75lBg">
+      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_uC2XPO2xEeiYg8GHx75lBg" count="3" computed="true">
         <parameters xmi:id="_uC2XPe2xEeiYg8GHx75lBg"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../metadata/connections/Oracle_0.1.item#_m91cVO2xEeiYg8GHx75lBg"/>
         <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Blank_Count_0.1.definition#_ccHq0xF2Ed2PKb6nEJEvhw"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_4OqD4-2xEeiYg8GHx75lBg" body="SELECT COUNT(&quot;NAME&quot;) FROM &quot;TALEND_DEV&quot;.&quot;TALEND_DEMO&quot;  WHERE TRIM(&quot;NAME&quot;) IS NULL " language="Oracle"/>
+        <builtInIndicatorDefinition xmi:id="_4OcBcO2xEeiYg8GHx75lBg" name="Blank Count" label="Blank Count">
+          <taggedValue xmi:id="_4OcBce2xEeiYg8GHx75lBg" tag="Description" value="counts the number of blank rows. A blank is a non null textual data that contains only white spaces (or nothing). Note that Oracle does not distinguish between the empty string and the null value"/>
+          <taggedValue xmi:id="_4OcBcu2xEeiYg8GHx75lBg" tag="Purpose" value="evaluates the number of blank records"/>
+          <sqlGenericExpression xmi:id="_4OcBc-2xEeiYg8GHx75lBg" body="SELECT COUNT(&lt;%=__COLUMN_NAMES__%>) FROM &lt;%=__TABLE_NAME__%> WHERE TRIM(&lt;%=__COLUMN_NAMES__%>) = '' &lt;%=__AND_WHERE_CLAUSE__%>" language="SQL"/>
+          <sqlGenericExpression xmi:id="_4OcBdO2xEeiYg8GHx75lBg" body="SELECT COUNT(&lt;%=__COLUMN_NAMES__%>) FROM &lt;%=__TABLE_NAME__%>  WHERE TRIM(&lt;%=__COLUMN_NAMES__%>) IS NULL &lt;%=__AND_WHERE_CLAUSE__%>" language="Oracle"/>
+          <sqlGenericExpression xmi:id="_4OcBde2xEeiYg8GHx75lBg" body="SELECT COUNT(&lt;%=__COLUMN_NAMES__%>) FROM &lt;%=__TABLE_NAME__%>  WHERE LTRIM(RTRIM(&lt;%=__COLUMN_NAMES__%>)) = '' &lt;%=__AND_WHERE_CLAUSE__%>" language="DB2"/>
+          <sqlGenericExpression xmi:id="_4OcBdu2xEeiYg8GHx75lBg" body="SELECT COUNT(&lt;%=__COLUMN_NAMES__%>) FROM &lt;%=__TABLE_NAME__%>  WHERE LTRIM(RTRIM(&lt;%=__COLUMN_NAMES__%>)) = '' &lt;%=__AND_WHERE_CLAUSE__%>" language="Microsoft SQL Server"/>
+          <sqlGenericExpression xmi:id="_4OcBd-2xEeiYg8GHx75lBg" body="SELECT COUNT(&lt;%=__COLUMN_NAMES__%>) FROM &lt;%=__TABLE_NAME__%> WHERE (&lt;%=__COLUMN_NAMES__%> = '' or RTRIM(LTRIM(&lt;%=__COLUMN_NAMES__%>)) = '') &lt;%=__AND_WHERE_CLAUSE__%>" language="Adaptive Server Enterprise | Sybase Adaptive Server IQ"/>
+        </builtInIndicatorDefinition>
       </indicators>
     </results>
     <parameters xmi:id="_suTmKe2xEeiYg8GHx75lBg" dataFilter="_uUT6oO2xEeiYg8GHx75lBg" analysisType="Multiple Column Analysis"/>
