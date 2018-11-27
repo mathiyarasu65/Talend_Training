@@ -12,6 +12,7 @@
     <module>code/routines</module>
     <module>jobs/process/Onboarding_Training/test_job_0.1</module>
     <module>jobs/process/Onboarding_Training/test_job_1_0.1</module>
+    <module>jobs/process/Onboarding_Training/test_job_2_0.1</module>
   </modules>
   <properties>
     <talend.project.name>TRAINING</talend.project.name>
